@@ -74,7 +74,8 @@ export default {
       this.bar = new Bar(data,document.getElementById('box-5'))
     },
     drawBarLine(){
-      this.barLine = new BarLine([],document.getElementById('barline'))
+      let data =[[200,356, 266, 432, 223, 334, 324, 444,343, 422, 462, 450]]
+      this.barLine = new BarLine(data,document.getElementById('barline'))
     },
     update(){
       this.gauge.updated({

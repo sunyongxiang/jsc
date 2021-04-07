@@ -174,12 +174,19 @@ export class BarLine extends Graph{
                 {
                     name: '收入',
                     type: 'bar',
-                    data: [200,356, 266, 432, 223, 334, 324, 444,343, 422, 462, 450]
+                    data: data[0],
+                    itemStyle:{
+                        color:'#26c6f0',
+                        borderRadius: [10, 10, 0, 0]
+                    }
                 },
                 {
                     name: '占比',
                     type: 'line',
                     yAxisIndex: 1,
+                    lineStyle:{
+                        color:'yellow'
+                    },
                     data: [60, 50, 80, 30, 70, 10, 60, 65, 90, 95, 80, 66]
                 }
             ]
