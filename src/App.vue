@@ -18,7 +18,22 @@
         </box>
       </div>
       <div class="container_center">
-        <div class="container_center_top"></div>
+        <div class="container_center_top">
+          <ul class="list">
+            <li class="list_item" v-for="item in lists" :key=" item.title">
+              <p>{{item.title}}</p>
+              <div>{{item.number}}台</div>
+            </li>
+          </ul>
+          <div class="gride_box">
+            <ul class="gride" v-for="i in 3" :key="i">
+              <li class="gride_item" v-for="item in lists2.slice((i-1)*6,(i-1)*6+6)" :key=" item.title">
+                <span class="gride_title">{{item.title}}</span>
+                <span class="gride_con">{{item.number}}</span>
+              </li>
+            </ul>
+          </div> 
+        </div>
         <div class="container_center_bottom" id="barline"></div>
       </div>
       <div class="container_right">
@@ -47,7 +62,75 @@ export default {
     return{
       gauge:null,
       pie:null,
-      bar:null
+      bar:null,
+      lists:[{
+        title:'运行时间',
+        number:'188'
+      },{
+        title:'运行时间1',
+        number:'188'
+      },{
+        title:'运行时间2',
+        number:'188'
+      },{
+        title:'运行时间3',
+        number:'188'
+      }],
+      lists2:[{
+        title:'运行时间4',
+        number:'188'
+      },{
+        title:'运行时间5',
+        number:'188'
+      },{
+        title:'运行时间6',
+        number:'188'
+      },{
+        title:'运行时间7',
+        number:'188'
+      },{
+        title:'运行时间8',
+        number:'188'
+      },{
+        title:'运行时间9',
+        number:'188'
+      },{
+        title:'运行时间10',
+        number:'188'
+      },{
+        title:'运行时间11',
+        number:'188'
+      },{
+        title:'运行时间12',
+        number:'188'
+      },{
+        title:'运行时间13',
+        number:'188'
+      },{
+        title:'运行时间14',
+        number:'188'
+      },{
+        title:'运行时间15',
+        number:'188'
+      },{
+        title:'运行时间16',
+        number:'188'
+      },{
+        title:'运行时间17',
+        number:'188'
+      },{
+        title:'运行时间18',
+        number:'188'
+      },{
+        title:'运行时间19',
+        number:'188'
+      },{
+        title:'运行时间20',
+        number:'188'
+      },{
+        title:'运行时间21',
+        number:'188'
+      }]
     }
   },
   methods:{
@@ -159,7 +242,63 @@ export default {
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
-  background: red;
+  background:url('./assets/img/bg1.png') no-repeat;
+  background-size: contain;
+  padding-top: 35px;
+  padding-left: 20px;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 70px;
+}
+.container_center_top .list{
+  display: flex;
+}
+.container_center_top .list_item{
+  height: 80px;
+  background: url('./assets/img/bg2.png') no-repeat;
+  background-size: 100% 100%;
+  flex:1;
+  margin: 0 5px;
+}
+.list_item p{
+  text-align: center;
+  margin-top: 20px;
+  color: #fff;
+}
+.list_item div{
+  font-size: 18px;
+  color: yellow;
+  margin-top: 10px;
+  text-align: center;
+}
+.gride_box{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 25px 0px 40px;
+}
+.gride{
+  display: flex;
+  flex: 1;
+}
+.gride .gride_item{
+  display: flex;
+  align-items: center;
+  background: darkcyan;
+  flex: 1;
+  margin: 0 5px;
+  margin-top: 10px;
+  border-radius: 5px;
+  justify-content: center;
+}
+.gride_item .gride_title{
+  color: #999;
+}
+.gride_item .gride_con{
+  font-size: 20px;
+  padding-left: 5px;
+  color: rgb(70, 203, 236);
 }
 .container_center_bottom{
   flex: 1;
